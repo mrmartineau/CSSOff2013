@@ -48,62 +48,13 @@ h1 {
 	max-width: 960px;
 }
 
-/* GRID */
-.g-row {
-	width: 100%;
-	margin: 0 auto;
-	zoom: 1;
-}
-.g-row:before,
-.g-row:after {
-	content: " ";
-	display: table;
-}
-.g-row:after {
-	clear: both;
-}
-// .g-row + .g-row {
-// 	margin-top: 15px;
-// }
-
-.g-col {
-	float: left;
-	min-height: 1px;
-	position: relative;
-	clear: none;
-	// margin-left: 15px;
-}
-.g-col:first-child {
-	margin-left: 0;
-}
-.g-col + .g-col:last-child { float: right; }
-.g-col + .g-col.end { float: left; }
-
-.g-half {
-	width: 50%;
-}
-.g-third {
-	width: 38.54166666666667%; /* 370 / 960 */
-}
-.g-twoThirds {
-	width: 60.41666666666666%; /* 580 / 960 */
-}
-
 /*
    Masthead
    ========================================================================== */
 .masthead {
 	position: relative;
 	height: 142px;
-
-	&:before {
-		content: '';
-		background-color: #CEC7DF;
-		position: absolute;
-		width: 100%;
-		height: 1010px;
-		right: 55%;
-	}
+	background-color: #CEC7DF;
 
 	.edition {
 		position: absolute;
@@ -121,20 +72,24 @@ h1 {
 .pageTitle {
 	position: relative;
 	font-weight: 100;
-	font-size: 279px;
-	color: #fff;
-	line-height: 225px;
+	font-size: 50px;
+	color: #000;
+	line-height: 1;
 	margin-top: 30px;
 	margin-bottom: 0;
 	z-index: 100;
 	display: inline-block;
+
+	br {
+		display: none;
+	}
 }
 
 /*
    Barbie
    ========================================================================== */
 .barbie {
-	margin-top: 310px;
+	margin-top: 10px;
 	color: #5f5d66;
 	text-align: center;
 	position: relative;
@@ -191,11 +146,109 @@ h1 {
 	}
 
 	h1, h5, p {
-		margin-left: 14%;
 		position: relative;
 	}
 
 }
+
+
+// === 744px> ===
+@media screen and (min-width: 744px) {
+	/*
+	   Grid
+	   ========================================================================== */
+	/* GRID */
+	.g-row {
+		width: 100%;
+		margin: 0 auto;
+		zoom: 1;
+	}
+	.g-row:before,
+	.g-row:after {
+		content: " ";
+		display: table;
+	}
+	.g-row:after {
+		clear: both;
+	}
+	// .g-row + .g-row {
+	// 	margin-top: 15px;
+	// }
+
+	.g-col {
+		float: left;
+		min-height: 1px;
+		position: relative;
+		clear: none;
+		// margin-left: 15px;
+	}
+	.g-col:first-child {
+		margin-left: 0;
+	}
+	.g-col + .g-col:last-child { float: right; }
+	.g-col + .g-col.end { float: left; }
+
+	.g-half {
+		width: 50%;
+	}
+	.g-third {
+		width: 38.54166666666667%; /* 370 / 960 */
+	}
+	.g-twoThirds {
+		width: 60.41666666666666%; /* 580 / 960 */
+	}
+
+	/*
+	   Masthead
+	   ========================================================================== */
+	.masthead {
+		position: relative;
+		height: 142px;
+		background-color: transparent;
+
+		&:before {
+			content: '';
+			background-color: #CEC7DF;
+			position: absolute;
+			width: 100%;
+			height: 1010px;
+			right: 55%;
+		}
+	}
+	.pageTitle {
+		font-size: 279px;
+		color: #fff;
+		line-height: 225px;
+
+		br {
+			display: inherit;
+		}
+	}
+
+	/*
+	   Barbie
+	   ========================================================================== */
+	.barbie {
+		margin-top: 310px;
+	}
+
+
+
+	/*
+	   Featured
+	   ========================================================================== */
+	.featuredContent {
+		h1, h5, p {
+			margin-left: 14%;
+			position: relative;
+		}
+
+	}
+
+
+
+}
+// === end 744px> ===
 
 // === 960px> ===
 @media screen and (min-width: 960px) {
