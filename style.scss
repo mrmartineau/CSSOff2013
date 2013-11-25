@@ -7,7 +7,9 @@
 	box-sizing: border-box;
 }
 body,
-figure {
+figure,
+h1, h2, h3, h4, h5, h6,
+p {
 	margin: 0;
 	padding: 0;
 }
@@ -38,14 +40,21 @@ h1 {
 	text-transform: uppercase;
 }
 
+p + p {
+	margin-top: 1em;
+}
+
 
 /*
    Scaffolding
    ========================================================================== */
 .pageWrapper {
 	margin: 0 auto;
-	width: 90%;
 	max-width: 960px;
+}
+
+article, footer {
+	margin: 0 5% 5%;
 }
 
 /*
@@ -53,16 +62,14 @@ h1 {
    ========================================================================== */
 .masthead {
 	position: relative;
-	height: 142px;
 	background-color: #CEC7DF;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
 
 	.edition {
-		position: absolute;
-		right: 0;
-		// top: 142px;
-		bottom: 0;
 		text-transform: uppercase;
-		color: #b0aeb8;
+		color: #000;
 		font-size: 12px;
 		letter-spacing: 3px;
 	}
@@ -72,10 +79,10 @@ h1 {
 .pageTitle {
 	position: relative;
 	font-weight: 100;
-	font-size: 50px;
+	font-size: 70px;
 	color: #000;
 	line-height: 1;
-	margin-top: 30px;
+	margin-top: 0;
 	margin-bottom: 0;
 	z-index: 100;
 	display: inline-block;
@@ -122,7 +129,7 @@ h1 {
 .featuredContent {
 
 	figure {
-		margin-bottom: -190px;
+		margin-bottom: -140px;
 		position: relative;
 	}
 	h1 {
@@ -151,9 +158,46 @@ h1 {
 
 }
 
+/*
+   Lobster
+   ========================================================================== */
+.lobster {
+
+	h1 {
+		font-weight: 400;
+	}
+}
+/*
+   Bullets
+   ========================================================================== */
+
+
+/*
+   Abbey Road
+   ========================================================================== */
+.abbeyRoad {
+
+}
+
+/*
+   Immigration
+   ========================================================================== */
+.immigration {
+
+}
+
+
+
+
 
 // === 744px> ===
 @media screen and (min-width: 744px) {
+	.pageWrapper {
+		width: 90%;
+	}
+	article, footer {
+		margin: inherit;
+	}
 	/*
 	   Grid
 	   ========================================================================== */
@@ -205,20 +249,31 @@ h1 {
 		position: relative;
 		height: 142px;
 		background-color: transparent;
+		padding: 0;
+		margin-bottom: 0;
+		text-align: left;
 
 		&:before {
 			content: '';
 			background-color: #CEC7DF;
 			position: absolute;
 			width: 100%;
-			height: 1010px;
+			height: 880px;
 			right: 55%;
+		}
+
+		.edition {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			color: #b0aeb8;
 		}
 	}
 	.pageTitle {
-		font-size: 279px;
+		font-size: 209px;
+		line-height: 0.8;
 		color: #fff;
-		line-height: 225px;
+		margin-top: 30px;
 
 		br {
 			display: inherit;
@@ -229,7 +284,8 @@ h1 {
 	   Barbie
 	   ========================================================================== */
 	.barbie {
-		margin-top: 310px;
+		margin-top: 200px;
+		width: 38.54166666666667%; /* 370 / 960 */
 	}
 
 
@@ -238,6 +294,12 @@ h1 {
 	   Featured
 	   ========================================================================== */
 	.featuredContent {
+		width: 60.41666666666666%; /* 580 / 960 */
+
+		h1 {
+			font-size: 55px;
+		}
+
 		h1, h5, p {
 			margin-left: 14%;
 			position: relative;
@@ -245,6 +307,34 @@ h1 {
 
 	}
 
+	/*
+	   Staying afloat / Lobster
+	   ========================================================================== */
+	.lobster {
+		width:  16.666666666666666%; /* 160 / 960 */
+	}
+
+
+	/*
+	   Bullets
+	   ========================================================================== */
+	.bulletsContainer {
+		width: 83.33333333333334%; /* 800 / 960 */
+	}
+
+	/*
+	   Immigration
+	   ========================================================================== */
+	.immigration {
+		width: 75%; /* 720 / 960 */
+	}
+
+	/*
+	   Movie Review
+	   ========================================================================== */
+	.movieReview {
+		width: 25%; /* 240 / 960 */
+	}
 
 
 }
@@ -252,15 +342,30 @@ h1 {
 
 // === 960px> ===
 @media screen and (min-width: 960px) {
+	/*
+	   Masthead
+	   ========================================================================== */
+	.masthead {
+		&:before {
+			height: 1010px;
+		}
+	}
+	.pageTitle {
+		font-size: 279px;
+		// line-height: 225px;
+	}
+
+
 
 	/*
 	   Barbie
 	   ========================================================================== */
 	.barbie {
+		margin-top: 310px;
 
 		figure {
-			position: relative;
 			left: -8%;
+			position: relative;
 		}
 	}
 
@@ -269,9 +374,14 @@ h1 {
 	   ========================================================================== */
 	.featuredContent {
 
+		h1 {
+			font-size: 75px;
+		}
+
 		figure {
 			left: -15%;
 			width: 150%;
+			margin-bottom: -190px;
 		}
 	}
 }

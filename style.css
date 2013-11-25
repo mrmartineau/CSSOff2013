@@ -8,7 +8,9 @@
   box-sizing: border-box; }
 
 body,
-figure {
+figure,
+h1, h2, h3, h4, h5, h6,
+p {
   margin: 0;
   padding: 0; }
 
@@ -33,37 +35,41 @@ img {
 h1 {
   text-transform: uppercase; }
 
+p + p {
+  margin-top: 1em; }
+
 /*
    Scaffolding
    ========================================================================== */
 .pageWrapper {
   margin: 0 auto;
-  width: 90%;
   max-width: 960px; }
+
+article, footer {
+  margin: 0 5% 5%; }
 
 /*
    Masthead
    ========================================================================== */
 .masthead {
   position: relative;
-  height: 142px;
-  background-color: #CEC7DF; }
+  background-color: #CEC7DF;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px; }
   .masthead .edition {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     text-transform: uppercase;
-    color: #b0aeb8;
+    color: #000;
     font-size: 12px;
     letter-spacing: 3px; }
 
 .pageTitle {
   position: relative;
   font-weight: 100;
-  font-size: 50px;
+  font-size: 70px;
   color: #000;
   line-height: 1;
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 0;
   z-index: 100;
   display: inline-block; }
@@ -94,7 +100,7 @@ h1 {
    featuredContent
    ========================================================================== */
 .featuredContent figure {
-  margin-bottom: -190px;
+  margin-bottom: -140px;
   position: relative; }
 .featuredContent h1 {
   color: #fdcd84;
@@ -115,7 +121,28 @@ h1 {
 .featuredContent h1, .featuredContent h5, .featuredContent p {
   position: relative; }
 
+/*
+   Lobster
+   ========================================================================== */
+.lobster h1 {
+  font-weight: 400; }
+
+/*
+   Bullets
+   ========================================================================== */
+/*
+   Abbey Road
+   ========================================================================== */
+/*
+   Immigration
+   ========================================================================== */
 @media screen and (min-width: 744px) {
+  .pageWrapper {
+    width: 90%; }
+
+  article, footer {
+    margin: inherit; }
+
   /*
      Grid
      ========================================================================== */
@@ -165,19 +192,28 @@ h1 {
   .masthead {
     position: relative;
     height: 142px;
-    background-color: transparent; }
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    text-align: left; }
     .masthead:before {
       content: '';
       background-color: #CEC7DF;
       position: absolute;
       width: 100%;
-      height: 1010px;
+      height: 880px;
       right: 55%; }
+    .masthead .edition {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #b0aeb8; }
 
   .pageTitle {
-    font-size: 279px;
+    font-size: 209px;
+    line-height: 0.8;
     color: #fff;
-    line-height: 225px; }
+    margin-top: 30px; }
     .pageTitle br {
       display: inherit; }
 
@@ -185,25 +221,74 @@ h1 {
      Barbie
      ========================================================================== */
   .barbie {
-    margin-top: 310px; }
+    margin-top: 200px;
+    width: 38.54166666666667%;
+    /* 370 / 960 */ }
 
   /*
      Featured
      ========================================================================== */
-  .featuredContent h1, .featuredContent h5, .featuredContent p {
-    margin-left: 14%;
-    position: relative; } }
+  .featuredContent {
+    width: 60.41666666666666%;
+    /* 580 / 960 */ }
+    .featuredContent h1 {
+      font-size: 55px; }
+    .featuredContent h1, .featuredContent h5, .featuredContent p {
+      margin-left: 14%;
+      position: relative; }
+
+  /*
+     Staying afloat / Lobster
+     ========================================================================== */
+  .lobster {
+    width: 16.666666666666666%;
+    /* 160 / 960 */ }
+
+  /*
+     Bullets
+     ========================================================================== */
+  .bulletsContainer {
+    width: 83.33333333333334%;
+    /* 800 / 960 */ }
+
+  /*
+     Immigration
+     ========================================================================== */
+  .immigration {
+    width: 75%;
+    /* 720 / 960 */ }
+
+  /*
+     Movie Review
+     ========================================================================== */
+  .movieReview {
+    width: 25%;
+    /* 240 / 960 */ } }
 @media screen and (min-width: 960px) {
+  /*
+     Masthead
+     ========================================================================== */
+  .masthead:before {
+    height: 1010px; }
+
+  .pageTitle {
+    font-size: 279px; }
+
   /*
      Barbie
      ========================================================================== */
-  .barbie figure {
-    position: relative;
-    left: -8%; }
+  .barbie {
+    margin-top: 310px; }
+    .barbie figure {
+      left: -8%;
+      position: relative; }
 
   /*
      Featured
      ========================================================================== */
+  .featuredContent h1 {
+    font-size: 75px; }
   .featuredContent figure {
     left: -15%;
-    width: 150%; } }
+    width: 150%;
+    margin-bottom: -190px; } }
